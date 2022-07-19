@@ -2,7 +2,8 @@
 let index = 0;
 let input = "abgあ|;曜";//defghijklmnopqrstuvwxyzあかさたな憂鬱";
 let downloading = false;
-let size = 64;
+let pngHeight = 64;
+let pngWidth = 64;
 let fixed = true;
 let font = "Nikukyu";
 let col = "#000000";
@@ -20,9 +21,9 @@ function draw(){
     let x = 0, y = 10;
     for(let i = 0;i < input.length; i++){
         x += 10;
-        textSize(size * scale);
+        textSize(pngHeight * scale);
         let c = input[i];
-        let s = size;
+        let s = pngWidth;
         if(!fixed){
             s = textWidth(c);
         }
@@ -30,13 +31,13 @@ function draw(){
         textFont(font);
         fill(200);
         stroke(0);
-        rect(x, y, s, size);
+        rect(x, y, s, pngHeight);
         noStroke();
         fill(col);
-        text(c, x + s/2, y + size/2);
-        x += s;
-        if(x + size >= width){
-            y += size+10;
+        text(c, x + s/2, y + pngHeight/2);
+        x += s + 10;
+        if(x + pngWidth >= width){
+            y += pngHeight+10;
             x = 0;
         }
     }
@@ -48,7 +49,8 @@ function getVars(){
     fixed = document.getElementById("fixed").checked;
     col = document.getElementById("color").value;
     scale = Number(document.getElementById("scale").value);
-    size = Number(document.getElementById("size").value);
+    pngWidth = Number(document.getElementById("pngWidth").value);
+    pngHeight = Number(document.getElementById("pngHeight").value);
     fileName = document.getElementById("fileName").value;
 }
 
@@ -65,13 +67,13 @@ function download(){
     if(index < 0||index >= input.length){
         endDownload();
     }
-    textSize(size * scale);
+    textSize(pngHeight * scale);
     const output = Array.from(new Set(input));
-    let s = size;
+    let s = pngWidth;
     if(!fixed){
         s = textWidth(output[i]);
     }
-    createCanvas(s, size);
+    createCanvas(s, pngHeight);
     clear();
     background(0, 0, 0, 0);
     textAlign(CENTER, CENTER);
