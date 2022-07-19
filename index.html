@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lusitana" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<h1>背景透過文字pngジェネレータ</h1>
+ 不具合，要望などは<a href="https://github.com/Shibaken28/font-png-generator" target="_blank" rel="noopener noreferrer">こちら</a>へ by shibaken28
+<h3>ダウンロードする文字</h3>
+<input type="text" id="outputChar" style="font-size:30px;" required
+        minlength="1" maxlength="300" value="入力例ABCgpq123いろは!?#"  size="100">
+<h3>フォント(日本語や英語，ひらがなのみに適用されるフォントがあることに注意してください)</h3>
+<select id="font" style="font-size:30px;">
+ <option>LemonSawarabi Mincho</option>
+ <option>Lusitana</option>
+ <option>Cinzel</option>
+ <option>Lato</option>
+ <option>Sawarabi Gothic</option>
+ <option>Hannari</option>
+ <option>Kokoro</option>
+ <option>Nico Moji</option>
+ <option>Nikukyu</option>
+</select>
+<h3>オプション</h3>
+<div style="font-size:20px;">
+fixed width<input type="checkbox" id="fixed" checked="checked">
+色 <input type="color" id="color" value="#000000">
+画像サイズ(ピクセル)<input type="number" style="font-size:20px;" id="size" max="256" min="4" value="64" step="1">
+<!-- <input type="range" id="size" min="4" max="256" step="4"> -->
+<br>
+画像サイズに対する文字の大きさ(割合)<input type="number" style="font-size:20px;" id="scale" max="1.5" min="0.1" value="0.8" step="0.1">
+保存ファイル名の先頭文字<input type="text" style="font-size:20px;" id="fileName" value="img_">
+<!--<input type="range" id="scale" min="0.3" max="1.2" step="0.05">-->
+</div> 
+<br>
+<input style="font-size:20px;" id="button" type="button" value="生成ボタン" onclick="generate()">
+<h3>プレビュー(四角が画像の枠になります．「g」「p」「j」などのdescenderに注意してください)</h3>
+
+</body>
+</html>
+
+
+
