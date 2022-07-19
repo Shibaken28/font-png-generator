@@ -87,5 +87,6 @@ function download(){
 }
 
 function generate(){
-    beginDownload();
+    let com = window.confirm("複数のファイルがダウンロードされます．よろしいですか？");
+    if(com)beginDownload();
 }
