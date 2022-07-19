@@ -78,7 +78,7 @@ function download(){
     textFont(font);
     fill(col);
     text(c,width/2,height/2);
-    save(fileName+"_"+c+".png");
+    save(fileName+c+".png");
     print(c)
     index+=1;
     if(index==outputChar.length){
