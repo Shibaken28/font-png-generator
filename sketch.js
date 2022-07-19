@@ -1,6 +1,6 @@
 
 let index=0;
-let outputChar = "abgあ|;曜";//defghijklmnopqrstuvwxyzあかさたな憂鬱";
+let input = "abgあ|;曜";//defghijklmnopqrstuvwxyzあかさたな憂鬱";
 let downloading = false;
 let size=64;
 let fixed=true;
@@ -18,10 +18,10 @@ function draw(){
     if(downloading)download();
     createCanvas(windowWidth*0.8,windowHeight*0.5);
     let x=0,y=10;
-    for(let i=0;i<outputChar.length;i++){
+    for(let i=0;i<input.length;i++){
         x+=10;
         textSize(size*scale);
-        let c = outputChar[i];
+        let c = input[i];
         let s = size;
         if(!fixed){
             s = textWidth(c);
@@ -43,7 +43,7 @@ function draw(){
 }
 
 function getVars(){
-    outputChar = document.getElementById("outputChar").value;
+    input = document.getElementById("input").value;
     font = document.getElementById("font").value;
     fixed = document.getElementById("fixed").checked;
     col = document.getElementById("color").value;
@@ -62,14 +62,14 @@ function endDownload(){
 }
 
 function download(){
-    if(index<0||index>=outputChar.length){
+    if(index<0||index>=input.length){
         endDownload();
     }
     textSize(size*scale);
-    let c = outputChar[index];
+    const output = Array.from(new Set(input));
     let s = size;
     if(!fixed){
-        s = textWidth(c);
+        s = textWidth(output[i]);
     }
     createCanvas(s, size);
     clear();
@@ -77,11 +77,11 @@ function download(){
     textAlign(CENTER, CENTER);
     textFont(font);
     fill(col);
-    text(c,width/2,height/2);
-    save(fileName+c+".png");
-    print(c)
+    text(output[index],width/2,height/2);
+    save(fileName+output[index]+".png");
+    print(output[index])
     index+=1;
-    if(index==outputChar.length){
+    if(index==output.length){
         endDownload();
     }
 }
