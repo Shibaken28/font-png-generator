@@ -35,21 +35,35 @@
         minlength="1" maxlength="300" value="入力例ABCgpq123いろは!?#"  size="100">
 <h3>フォント(日本語や英語，ひらがなのみに適用されるフォントがあることに注意してください)</h3>
 <select id="font" style="font-size:30px;">
- <option>LemonSawarabi Mincho</option>
+ <option>monospace</option>
+ <option>cursive</option>
+ <option>serif</option>
+ <option>cursive</option>
+ <option>sans-serif</option>
+ <option>fantasy</option>
+ <option>Sawarabi Mincho</option>
  <option>Lusitana</option>
  <option>Cinzel</option>
  <option>Lato</option>
  <option>Sawarabi Gothic</option>
  <option>Hannari</option>
  <option>Kokoro</option>
- <option>Nico Moji</option>
  <option>Nikukyu</option>
+ <option>Nico Moji</option>
+ <option>MS PGothic</option>
+ <option>SimSun</option>
+ <option>Times New Roman</option>
+ <option>Yu Mincho</option>
+ <option>Impact</option>
+ <option>Courier</option>
+ <option>Georgia</option>
 </select>
 <h3>オプション</h3>
 <div style="font-size:20px;">
-fixed width<input type="checkbox" id="fixed" checked="checked">
+fixed-width<input type="checkbox" id="fixed" checked="checked">
 色 <input type="color" id="color" value="#000000">
-画像サイズ(ピクセル)<input type="number" style="font-size:20px;" id="size" max="256" min="4" value="64" step="1">
+画像サイズ縦(ピクセル)<input type="number" style="font-size:20px;" id="pngHeight" max="256" min="4" value="64" step="1">
+画像サイズ横(ピクセル,fixed-widthの場合無効)<input type="number" style="font-size:20px;" id="pngWidth" max="256" min="4" value="64" step="1">
 <!-- <input type="range" id="size" min="4" max="256" step="4"> -->
 <br>
 画像サイズに対する文字の大きさ(割合)<input type="number" style="font-size:20px;" id="scale" max="1.5" min="0.1" value="0.8" step="0.1">
@@ -58,7 +72,7 @@ fixed width<input type="checkbox" id="fixed" checked="checked">
 </div> 
 <br>
 <input style="font-size:20px;" id="button" type="button" value="生成ボタン" onclick="generate()">
-<h3>プレビュー(四角が画像の枠になります．「g」「p」「j」などのdescenderに注意してください)</h3>
+<h3>プレビュー(四角が画像の枠になります．灰色は透過します．「g」「p」「j」などのdescenderに注意してください)</h3>
 
 </body>
 </html>
