@@ -71,7 +71,7 @@ function download(){
     const output = Array.from(new Set(input));
     let s = pngWidth;
     if(!fixed){
-        s = textWidth(output[i]);
+        s = textWidth(output[index]);
     }
     createCanvas(s, pngHeight);
     clear();
